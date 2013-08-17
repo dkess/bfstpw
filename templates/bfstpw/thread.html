@@ -1,0 +1,53 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic Forum Software To Practice Webdev - don't use it!</title>
+	<link rel="stylesheet" type="text/css" href="{% static "bfstpw/site.css" %}"/>
+</head>
+<body>
+	<div id="container">
+		<header><h1>BFSTPW - don't use it!</h1></header>
+		<div id="contentbox" class="clearfix">
+			<div class="threadsidebar">
+				<ol>
+					<li><a href="{% url 'bfstpw-threadlist' %}">Thread list</a></li>
+					<hr>
+				{% for thread in threadlist %}
+					<li><a href="{% url 'bfstpw-thread' thread.id %}">{{ thread.name }}</a></td>
+				{% endfor %}
+				</ol>
+			</div>
+			<div class="posts">
+				<header><h2>{{ thread.thread_title }}</h2></header>
+				{% include "bfstpw/threadpages.html" %}
+				{% for post in posts %}
+				<article>
+					<div class="postInfo" id="{{ posts.start_index|add:forloop.counter0 }}">
+						<span class="name">{{ post.poster }}</span>
+						<span class="dateTime">{{ post.date_posted|date:"Y-m-d (D) H:i" }}</span>
+					</div>
+					<blockquote class="message">{{ post.message_body|safe }}</blockquote>
+				</article>
+				{% endfor %}
+				{% include "bfstpw/threadpages.html" %}
+				<div class="reply">
+					<h3>Say something!</h3>
+					{% if message %}
+					<p class="custommsg">{{ message }}</p>
+					{% endif %}
+					<form action="{% url 'bfstpw-post' thread.id %}" method="post">
+						{% csrf_token %}
+						<input name="name" placeholder="Your name" type="text">
+						<br>
+						<textarea name="message" rows="7"></textarea>
+						<br>
+						<input type="submit" value="Post">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

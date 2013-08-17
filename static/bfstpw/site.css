@@ -1,0 +1,135 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+/* http://colorschemedesigner.com/#2J529hWs0g0g0 */
+/* http://colorschemedesigner.com/#2J51Uaquefzg0 */
+/* http://colorschemedesigner.com/#2J429hWs0g0g0 */
+/*
+$primary-1: #3EC313;
+$primary-2: #478234;
+$primary-3: #1C6904;
+$primary-4: #7FEA5D;
+$primary-5: #A9EA95;
+
+$secondary-a-1: #0F917B;
+$secondary-a-2: #276158;
+$secondary-a-3: #034E42;
+$secondary-a-4: #56DAC4;
+$secondary-a-5: #8ADACC;
+
+$secondary-b-1: #A8DA16;
+$secondary-b-2: #7B923A;
+$secondary-b-3: #587504;
+$secondary-b-4: #CDF260;
+$secondary-b-5: #DCF29A;
+*/
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+#container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 0 1em 0; }
+
+.clearfix {
+  overflow: auto;
+  zoom: 1; }
+
+h1 {
+  text-align: center;
+  background-color: #5b8eaa;
+  margin: 0;
+  font-weight: 600; }
+
+h2 {
+  color: #af3a4a;
+  font-weight: lighter;
+  font-size: 1.7em; }
+
+a:link, a:visited {
+  color: #295a75; }
+
+.message a:visited {
+  color: #b8803d; }
+
+#contentbox {
+  display: table;
+  width: 100%; }
+
+#contentbox .threadsidebar {
+  width: 228px;
+  display: table-cell; }
+
+.pages {
+  text-align: right;
+  float: right; }
+
+#contentbox .posts {
+  padding-left: 25px;
+  right: 0;
+  width: auto;
+  margin-right: 0;
+  display: table-cell; }
+
+.posts article {
+  margin-top: 2px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  padding: 4px;
+  display: block; }
+
+.message {
+  line-height: 1.5em;
+  color: #1C1C1C; }
+
+.postInfo .name {
+  color: #af3a4a;
+  font-weight: bold; }
+
+.postInfo .dateTime {
+  color: #295a75; }
+
+.threadsidebar ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+.threadsidebar li {
+  margin: 6px 0; }
+
+.reply h3 {
+  color: #b8803d;
+  font-weight: normal;
+  font-size: 1.4em; }
+
+.reply textarea {
+  width: 80%;
+  display: inline; }
+
+.newthreadform {
+  display: none; }
+
+#newthreadcheckbox {
+  display: none; }
+
+#newthreadcheckbox:checked + .newthreadform {
+  display: block; }
+
+.threadlist {
+  width: 100%; }
+
+.threadlist tr:nth-child(odd) {
+  background-color: #f0d6b7; }
+
+.threadlist {
+  border-collapse: collapse; }
+
+.threadlist tr:first-child td {
+  font-weight: bold; }
+
+.threadlist a {
+  color: #295a75; }
+
+a.lastPage {
+  text-decoration: none; }
+
+.newthread h3 {
+  color: #4d9c34; }

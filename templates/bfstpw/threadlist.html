@@ -1,0 +1,48 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic Forum Software To Practice Webdev - don't use it!</title>
+    <link rel="stylesheet" type="text/css" href="{% static "bfstpw/site.css" %}"/>
+</head>
+<body>
+	<div id="container">
+		<header><h1>BFSTPW - don't use it!</h1></header>
+
+		<div class="reply newthread">
+			<label class="newthread-button" for="newthreadcheckbox"><h3>New thread+</h3></label>
+			<input type="checkbox" id="newthreadcheckbox">
+			<form class='newthreadform' action="{% url 'bfstpw-newthreadmake' %}" method="post">
+				{% csrf_token %}
+				<input name="threadname" placeholder="Thread name" type="text">
+				<input name="name" placeholder="Your name" type="text">
+				<br>
+				<textarea name="message" rows="7"></textarea>
+				<br>
+				<input type="submit" value="Post">
+			</form>
+		</div>
+
+		<table class="threadlist">
+			<tr>
+				<td>Topic</td>
+				<td>Topic Starter</td>
+				<td>Posts</td>
+				<td>Last message</td>
+			</tr>
+		{% for thread in threadlist %}
+			<tr>
+				<td><a class="threadlink" href="{% url 'bfstpw-thread' thread.id %}">{{ thread.name }}</a>
+                    {% if thread.lastpage > 1 %}
+				<a class="lastPage" title="Jump to the last page" href="{% url 'bfstpw-thread' thread.id %}?page={{ thread.lastpage }}">&gt;</a></td>
+				{% endif %}
+				<td>{{ thread.poster }}</td>
+				<td>{{ thread.replycount }}</td>
+				<td>{{ thread.date|date:"H:i M d Y" }} {{ thread.lastposter }}</td>
+			</tr>
+		{% endfor %}
+		</table>
+	</div>
+</body>
+</html>

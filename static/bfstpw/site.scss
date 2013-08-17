@@ -1,0 +1,214 @@
+/* http://colorschemedesigner.com/#2J529hWs0g0g0 */
+/* http://colorschemedesigner.com/#2J51Uaquefzg0 */
+/* http://colorschemedesigner.com/#2J429hWs0g0g0 */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+/*
+$primary-1: #3EC313;
+$primary-2: #478234;
+$primary-3: #1C6904;
+$primary-4: #7FEA5D;
+$primary-5: #A9EA95;
+
+$secondary-a-1: #0F917B;
+$secondary-a-2: #276158;
+$secondary-a-3: #034E42;
+$secondary-a-4: #56DAC4;
+$secondary-a-5: #8ADACC;
+
+$secondary-b-1: #A8DA16;
+$secondary-b-2: #7B923A;
+$secondary-b-3: #587504;
+$secondary-b-4: #CDF260;
+$secondary-b-5: #DCF29A;
+*/
+
+$primary-1: #6DBD53;
+$primary-2: #68A654;
+$primary-3: #4D9C34;
+$primary-4: #81CE69;
+$primary-5: #8ACE74;
+
+$secondary-a-1: #42738E;
+$secondary-a-2: #42687C;
+$secondary-a-3: #295A75;
+$secondary-a-4: #5B8EAA;
+$secondary-a-5: #6492AA;
+
+$secondary-b-1: #DFA662;
+$secondary-b-2: #C39864;
+$secondary-b-3: #B8803D;
+$secondary-b-4: #E7B376;
+$secondary-b-5: #E7B983;
+
+$complement-1: #D45D6E;
+$complement-2: #BA5F6B;
+$complement-3: #AF3A4A;
+$complement-4: #DF7281;
+$complement-5: #DF7E8C;
+
+body {
+	//font-family: Arial;
+	font-family: 'Open Sans', sans-serif;
+	//width: 100%;
+}
+
+#container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 0 1em 0;
+}
+
+.clearfix {
+	overflow: auto;
+	zoom: 1;
+}
+
+header {
+	//margin: 0;
+}
+
+h1 {
+	text-align: center;
+	background-color: $secondary-a-4;
+	margin:0;
+	font-weight: 600;
+}
+
+h2 {
+	color: $complement-3;
+	font-weight: lighter;
+	font-size: 1.7em;
+}
+
+a:link, a:visited {
+	color: $secondary-a-3;
+}
+
+.message a:visited {
+	color: $secondary-b-3;
+}
+
+#contentbox {
+	//background-color: #DCE481;
+	//background-color: $secondary-b-5;
+	display: table;
+	width: 100%;
+}
+
+#contentbox .threadsidebar {
+	//float:left;
+	width: 228px;
+	display: table-cell;
+	//border-width:1px;
+	//border-style: solid;
+}
+
+.pages {
+	text-align: right;
+	float: right;
+}
+
+#contentbox .posts {
+	padding-left: 25px;
+	//margin-left: 228px;
+	//float: right;
+	right: 0;
+	//width: 100%;
+	width: auto;
+	margin-right: 0;
+	display: table-cell;
+}
+
+.posts article {
+	//background-color: $secondary-b-5;
+	//background-color: $secondary-b-5;
+	//border-style: solid;
+	//border-width: 1px;
+	//border-color: $secondary-b-4;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	padding: 4px;
+	display: block;
+}
+
+.message {
+	line-height: 1.5em;
+	color: #1C1C1C;
+}
+
+.postInfo .name {
+	color: $complement-3;
+	//color: $secondary-a-3;
+	font-weight: bold;
+}
+
+.postInfo .dateTime {
+	//color: #42687C;
+	//color: $complement-2;
+	//color: $complement-3;
+	color: $secondary-a-3;
+}
+
+.threadsidebar ol {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.threadsidebar li {
+	margin: 6px 0;
+}
+
+.reply h3 {
+	color: $secondary-b-3;
+	font-weight: normal;
+	font-size: 1.4em;
+}
+
+.reply textarea {
+	//resize:horizontal;
+	width: 80%;
+	display:inline;
+}
+
+.newthreadform {
+	display:none;
+}
+
+#newthreadcheckbox{display:none}
+#newthreadcheckbox:checked + .newthreadform {
+	display:block;
+}
+
+.threadlist {
+	width: 100%;
+}
+
+.threadlist tr:nth-child(odd) {
+	background-color: lighten($secondary-b-1, 20%);
+}
+
+.threadlist {
+	border-collapse: collapse;
+}
+
+.threadlist tr:first-child td {
+	font-weight: bold;
+}
+
+.threadlist a {
+	//font-weight: bold;
+	//color: #1C1C1C;
+	color: $secondary-a-3;
+}
+
+a.lastPage {
+	text-decoration: none;
+}
+
+.newthread h3 {
+	color: $primary-3;
+}
