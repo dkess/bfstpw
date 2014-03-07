@@ -44,11 +44,11 @@ def thread(request, thread_id, message=''):
 def post(request, thread_id):
     t = get_object_or_404(ForumThread, id=thread_id)
 
+    posts = t.forumpost_set
     """
     # TODO: don't let users post too quickly
     session = request.session
     current_time = time()
-    posts = t.forumpost_set
     if (session.get('lastposttime',0) + 10) < current_time:
         message_html = markdown(request.POST['message'], safe_mode='escape')
         posts.create(poster=request.POST['name'],message_body=message_html,date_posted=datetime.now())

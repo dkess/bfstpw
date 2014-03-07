@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="django-bfstpw",
-    version="1.0",
+    version="1.0-1",
     packages=["bfstpw"],
     include_package_data=True,
     install_requires=["markdown"],
