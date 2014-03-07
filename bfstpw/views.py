@@ -7,8 +7,8 @@ from django.db.models import Count
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.template import Context
+import django.utils.timezone
 from markdown import markdown
-from time import time
 
 def threadlist(request):
     c = Context({"threadlist" :
@@ -60,13 +60,17 @@ def post(request, thread_id):
         msg = "Error: you must wait 10 seconds before posting"
     """
     message_html = markdown(request.POST['message'], safe_mode='escape')
-    posts.create(poster=request.POST['name'],message_body=message_html,date_posted=datetime.now())
+    posts.create(poster=request.POST['name'], message_body=message_html,
+            date_posted=django.utils.timezone.now())
     pagenum = (posts.count() / getattr(settings, 'BFSTPW_MAX_POSTS_PER_PAGE', 20))+1
     return HttpResponseRedirect(reverse('bfstpw-thread', args=(t.id,))+'?page=%d' % pagenum)
 
 def newthreadmake(request):
     t = ForumThread(thread_title=request.POST['threadname'])
     t.save()
-    t.forumpost_set.create(poster=request.POST['name'],message_body=request.POST['message'],date_posted=datetime.now())
+    message_html = markdown(request.POST['message'], safe_mode='escape')
+    t.forumpost_set.create(poster=request.POST['name'],
+            message_body=message_html,
+            date_posted=django.utils.timezone.now())
 
     return HttpResponseRedirect(reverse('bfstpw-thread', args=(t.id,)))
