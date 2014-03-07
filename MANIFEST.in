@@ -1,0 +1,4 @@
+include LICENSE
+include README.md
+recursive-include bfstpw/static *
+recursive-include bfstpw/templates *
