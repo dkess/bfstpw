@@ -5,4 +5,4 @@ Currently it does not have any protection against fast posting/spamming.
 
 All posts can use markdown. Some elements (like h1) may render strangely.
 
-Check out a live demo at [nisani.bot.nu/bfstpw](http://nisani.bot.nu/bfstpw/)!
+Check out a live demo at [dkess.me/bfstpw](https://dkess.me/bfstpw/)!
